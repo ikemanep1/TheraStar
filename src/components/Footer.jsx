@@ -8,7 +8,9 @@ function Footer(){
     color: "white",
     backgroundColor: "grey",
     padding: "5px;",
-    textDecoration: 'none'
+    textDecoration: 'none',
+    display: 'none',
+    borderBottom: '5px solid #fcd2cf'
   }
   return (
     <div style={footerStyle}>

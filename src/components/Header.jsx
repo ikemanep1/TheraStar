@@ -1,18 +1,26 @@
 import React from "react";
 
 function Header(){
+  const headerColor = {
+    backgroundColor: "#fef0ef",
+  }
   const headerStyle = {
-    marginLeft: "10px",
-    marginRight: "20px",
-    border: "3px solid #ff751a",
     color: "white",
-    backgroundColor: "grey",
-    padding: "5px;",
-    textDecoration: 'none'
+    padding: "20px",
+    textDecoration: 'none',
+    height: '100px',
+    textAlign: 'center',
+    fontFamily: 'fantasy',
+    borderBottom: '2px solid #dac7c8',
+    color: '#cc6699',
+    fontSize: "20px",
   }
   return (
+    <div style={headerColor}>
     <div style={headerStyle}>
-    <p>I truly believe in myself</p>
+    <h1>Thera Star</h1>
+    <p> Help is on the way </p>
+    </div>
     </div>
   );
 }
