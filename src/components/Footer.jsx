@@ -2,15 +2,16 @@ import React from "react";
 
 function Footer(){
   const footerStyle = {
-    marginLeft: "10px",
-    marginRight: "20px",
-    border: "3px solid #ff751a",
+    backgroundColor: "#fef0ef",
     color: "white",
-    backgroundColor: "grey",
-    padding: "5px;",
+    padding: "5px",
     textDecoration: 'none',
-    display: 'none',
-    borderBottom: '5px solid #fcd2cf'
+    textAlign: 'center',
+    fontFamily: 'fantasy',
+    borderBottom: '2px solid #dac7c8',
+    color: '#cc6699',
+    fontSize: "20px",
+    marginTop: '100%'
   }
   return (
     <div style={footerStyle}>

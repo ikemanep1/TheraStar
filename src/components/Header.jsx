@@ -1,14 +1,11 @@
 import React from "react";
 
 function Header(){
-  const headerColor = {
-    backgroundColor: "#fef0ef",
-  }
   const headerStyle = {
+    backgroundColor: "#fef0ef",
     color: "white",
     padding: "20px",
     textDecoration: 'none',
-    height: '100px',
     textAlign: 'center',
     fontFamily: 'fantasy',
     borderBottom: '2px solid #dac7c8',
@@ -16,11 +13,9 @@ function Header(){
     fontSize: "20px",
   }
   return (
-    <div style={headerColor}>
     <div style={headerStyle}>
     <h1>Thera Star</h1>
-    <p> Help is on the way </p>
-    </div>
+    <p> Don't give up, Help is within reach </p>
     </div>
   );
 }
