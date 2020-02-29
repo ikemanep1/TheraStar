@@ -8,10 +8,10 @@ function Footer(){
     textDecoration: 'none',
     textAlign: 'center',
     fontFamily: 'fantasy',
-    borderBottom: '2px solid #dac7c8',
+    borderTop: '2px solid #dac7c8',
     color: '#cc6699',
     fontSize: "20px",
-    marginTop: '100%'
+    marginTop: '100%',
   }
   return (
     <div style={footerStyle}>
