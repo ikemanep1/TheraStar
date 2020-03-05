@@ -28,10 +28,9 @@ function Header(){
     <h1>Thera Star</h1>
     <p> Don't give up, Help is within reach </p>
     <table className="nav-links">
-           <Link to="/"><Button style={navButtons}>Home</Button></Link>
-           <Link to="/footer"><Button style={navButtons}>Add Drink</Button></Link>
-           <Link to="/footer"><Button style={navButtons}>Client Praise</Button></Link>
-      </table>
+      <Link to="/"><Button style={navButtons}>Home</Button></Link>
+      <Link to="/articleadd"><Button style={navButtons}>Add article</Button></Link>
+    </table>
     </div>
   );
 }

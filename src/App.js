@@ -1,6 +1,11 @@
 import React from 'react';
 import Header from './components/Header'
 import Footer from './components/Footer'
+import Article from './components/Article';
+import ArticleAdd from './components/ArticleAdd';
+import ArticleList from './components/ArticleList';
+import NewArticleControl from './components/NewArticleControl';
+import Error404 from './components/Error404';
 import {Switch, Route} from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 import Moment from 'moment';
@@ -13,7 +18,14 @@ class App extends React.Component {
     super(props);
     this.state = {
     }
+    this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
   };
+
+  handleAddingNewArticleToList(newArticle) {
+  let newMasterArticleList = this.state.masterArticleList.slice();
+  newMasterArticleList.push(newArticle);
+  this.setState({masterArticleList: newMasterArticleList});
+}
   render() {
     return (
       <div className="App">
@@ -25,8 +37,9 @@ class App extends React.Component {
       </div>
       <div>
       <Switch>
-      <Route exact path='/' render={() =>< Header />}/>
-      <Route path='/footer' render={() =>< Footer />}/>
+        <Route exact path='/' render={() =>< ArticleList articleTotal = {this.state.masterArticleList} />}/>
+        <Route path='/articleadd' render={()=><NewArticleControl onNewArticleCreation={this.handleAddingNewArticleToList} />} />
+        <Route component={Error404} />
       </Switch>
       </div>
       </div>
