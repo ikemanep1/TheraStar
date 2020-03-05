@@ -29,7 +29,10 @@ function Header(){
     <p> Don't give up, Help is within reach </p>
     <table className="nav-links">
       <Link to="/"><Button style={navButtons}>Home</Button></Link>
+      <Link to="/articlelist"><Button style={navButtons}>Resources</Button></Link>
       <Link to="/articleadd"><Button style={navButtons}>Add article</Button></Link>
+      <Link to="/reviewlist"><Button style={navButtons}>Reviews</Button></Link>
+      <Link to="/reviewadd"><Button style={navButtons}>Feedback</Button></Link>
     </table>
     </div>
   );
