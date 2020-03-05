@@ -23,7 +23,17 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterMhpList: [],
+      masterMhpList: [{
+        name: "Ike Esquivel-Pilloud, MD",
+        occupation: "cheer-up artist",
+        address: "'Clara', computer station 1B",
+        insurance: "accepts all forms",
+        accepting: "Is currently accepting patients",
+        email: "ike.esquivelpilloud@gmail.com",
+        phone: "***-***-****",
+        bio: "Ike is well-versed in the practice of cheering people up, he's a real pro. Ike is even better at his trade if you provide licorice.",
+        link: "https://www.linkedin.com/in/isaac-esquivel-pilloud/"
+      }],
       masterReviewList: [],
       masterArticleList: [
         {

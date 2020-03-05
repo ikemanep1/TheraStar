@@ -45,7 +45,7 @@ const buttonColors = {
       <Link to="/articlelist"><Button style={buttonColors}>Resources</Button></Link>
       <Link to="/articleadd"><Button style={buttonColors}>Add article</Button></Link>
       <Link to="/reviewlist"><Button style={buttonColors}>Reviews</Button></Link>
-      <Link to="/reviewadd"><Button style={buttonColors}>Feedback</Button></Link>
+      <Link to="/reviewadd"><Button style={buttonColors}>Provide Feedback</Button></Link>
     </table>
     </div>
     <div style={logoStyles}>

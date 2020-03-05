@@ -15,7 +15,8 @@ function Footer(){
     height: '20%',
     position: 'relative',
     borderTopRightRadius: '100px',
-    borderTopLeftRadius: '100px'
+    borderTopLeftRadius: '100px',
+    borderTop: '3px solid #ddb0dd',
   }
   return (
     <div style={footerStyle}>
