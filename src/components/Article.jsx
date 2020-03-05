@@ -14,10 +14,10 @@ function Article(props){
   }
   return (
     <div style={articleSingular}>
-    <p>{props.name}</p>
+    <p>Article: {props.name}</p>
     <ul>
-      <p> {props.link}</p>
-      <p> {props.description}</p>
+      <p>Read it here: {props.link}</p>
+      <p>About this article: {props.description}</p>
     </ul>
   </div>
    );

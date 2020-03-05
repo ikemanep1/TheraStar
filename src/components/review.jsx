@@ -14,11 +14,11 @@ function Review(props){
   }
   return (
     <div style={reviewSingular}>
-    <p>{props.name}</p>
+    <p>{props.name} had this to say:</p>
     <ul>
-      <p> {props.subject}</p>
-      <p> {props.rating}</p>
-      <p> {props.content}</p>
+      <p>Article/Mhp: {props.subject}</p>
+      <p>rating: {props.rating} out of 5</p>
+      <p>"{props.content}"</p>
     </ul>
   </div>
    );
