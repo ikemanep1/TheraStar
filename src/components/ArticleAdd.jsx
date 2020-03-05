@@ -11,19 +11,19 @@ function ArticleAdd(props) {
 
   function handleNewArticleSubmission(event) {
     event.preventDefault();
-    props.onNewArticleCreation({name: _name.value, type: _link.value, description: _description.value});
+    props.onNewArticleCreation({name: _name.value, link: _link.value, description: _description.value});
     _name.value = '';
     _link.value = '';
     _description.value = '';
   }
-  const aleFormStyles = {
+  const articleFormStyles = {
   }
   const navButtons = {
   }
   const inputStyles = {
   }
   return (
-    <div style={aleFormStyles}>
+    <div style={articleFormStyles}>
     <form onSubmit={handleNewArticleSubmission}>
     <input style={inputStyles}
     type='text'

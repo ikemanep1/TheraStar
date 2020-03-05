@@ -15,7 +15,6 @@ function ArticleList(props){
        <div>
        <div className="intro" style={introStyles}>
        </div>
-         <p style={articleIntro}>Welcome to TheraStar. This is a place for people who are in search of help.</p>
          {props.articleTotal.map((article) =>
            <Article name={article.name}
              description={article.description}
