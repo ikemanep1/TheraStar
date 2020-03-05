@@ -17,10 +17,27 @@ function ArticleAdd(props) {
     _description.value = '';
   }
   const articleFormStyles = {
+    margin: '40px',
+    textAlign: 'center',
+    backgroundColor: '#c06cc6',
+    padding: '20px',
+    borderRadius: '100px',
+    border: '3px solid #ddb0dd',
+    fontFamily: 'luminari, fantasy',
+    color: '#fdfdff',
   }
-  const navButtons = {
+  const buttonColors = {
+    marginLeft: '10px',
+    border: "3px solid #fff285",
+    color: "white",
+    backgroundColor: "#7a387a",
+    padding: "10px",
+    textDecoration: 'none',
+    fontSize: '20px',
+    borderRadius: '20px'
   }
   const inputStyles = {
+    margin: '10px'
   }
   return (
     <div style={articleFormStyles}>
@@ -40,7 +57,7 @@ function ArticleAdd(props) {
     id='description'
     placeholder='Article Description'
     ref={(input) => {_description = input;}}/>
-    <Button style={navButtons} type='submit'>Submit!</Button>
+    <Button style={buttonColors} type='submit'>Submit!</Button>
       </form>
     </div>
   );

@@ -20,10 +20,27 @@ function ReviewAdd(props) {
     _content.value = '';
   }
   const reviewFormStyles = {
+    margin: '40px',
+    textAlign: 'center',
+    backgroundColor: '#c06cc6',
+    padding: '20px',
+    borderRadius: '100px',
+    border: '3px solid #ddb0dd',
+    fontFamily: 'luminari, fantasy',
+    color: '#fdfdff',
   }
-  const navButtons = {
+  const buttonColors = {
+    marginLeft: '10px',
+    border: "3px solid #fff285",
+    color: "white",
+    backgroundColor: "#7a387a",
+    padding: "10px",
+    textDecoration: 'none',
+    fontSize: '20px',
+    borderRadius: '20px'
   }
   const inputStyles = {
+    margin: '10px'
   }
   return (
     <div style={reviewFormStyles}>
@@ -48,7 +65,7 @@ function ReviewAdd(props) {
     id='content'
     placeholder='Review Content'
     ref={(input) => {_content = input;}}/>
-    <Button style={navButtons} type='submit'>Submit!</Button>
+    <Button style={buttonColors} type='submit'>Submit!</Button>
       </form>
     </div>
   );
