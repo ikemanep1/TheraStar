@@ -5,24 +5,18 @@ import { Link } from 'react-router-dom';
 import {Button} from 'react-bootstrap';
 
 function ReviewList(props){
-  const reviewIntro = {
-  }
-  const introStyles = {
-  }
-  const navButtons = {
+  const itemGrid = {
+    display: 'grid',
+    gridTemplateColumns: '1fr 1fr'
   }
   return (
-       <div>
-       <div className="intro" style={introStyles}>
-       </div>
+       <div style={itemGrid}>
          {props.reviewTotal.map((review) =>
            <Review name={review.name}
              subject={review.subject}
              rating={review.rating}
              content={review.content}/>
          )}
-         <div style={reviewIntro}>
-         </div>
        </div>
      );
 }

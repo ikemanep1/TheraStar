@@ -34,7 +34,44 @@ class App extends React.Component {
         bio: "Ike is well-versed in the practice of cheering people up, he's a real pro. Ike is even better at his trade if you provide licorice.",
         link: "https://www.linkedin.com/in/isaac-esquivel-pilloud/"
       }],
-      masterReviewList: [],
+      masterReviewList: [
+        {
+          name: "steve",
+          subject: "Marvin",
+          rating: "5",
+          content: "he is the best!"
+        },
+        {
+          name: "steve",
+          subject: "Marvin",
+          rating: "5",
+          content: "he is the best!"
+        },
+        {
+          name: "steve",
+          subject: "Marvin",
+          rating: "5",
+          content: "he is the best!"
+        },
+        {
+          name: "steve",
+          subject: "Marvin",
+          rating: "5",
+          content: "he is the best!"
+        },
+        {
+          name: "steve",
+          subject: "Marvin",
+          rating: "5",
+          content: "he is the best!"
+        },
+        {
+          name: "steve",
+          subject: "Marvin",
+          rating: "5",
+          content: "he is the best!"
+        },
+      ],
       masterArticleList: [
         {
           name: "Coping with stress",
