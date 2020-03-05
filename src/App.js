@@ -65,8 +65,6 @@ class App extends React.Component {
       <Header/>
       <header className="TheraStar">
       </header>
-      <Footer/>
-      </div>
       <div>
       <Switch>
       <Route exact path='/' render={() =>< MhpList mhpTotal = {this.state.masterMhpList} />}/>
@@ -75,6 +73,8 @@ class App extends React.Component {
       <Route exact path='/reviewlist' render={() =>< ReviewList reviewTotal = {this.state.masterReviewList} />}/>
       <Route component={Error404} />
       </Switch>
+      <Footer/>
+      </div>
       </div>
       </div>
     );

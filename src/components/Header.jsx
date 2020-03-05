@@ -1,39 +1,56 @@
 import React from "react";
 import { Link } from 'react-router-dom';
 import {Button} from 'react-bootstrap';
+import logo from '../img/logo.png';
 
 function Header(){
   const headerStyle = {
-    backgroundColor: "#fef0ef",
+    backgroundColor: "#ffccff",
     color: "white",
-    padding: "20px",
+    padding: "5px",
     textDecoration: 'none',
     textAlign: 'center',
     fontFamily: 'fantasy',
-    borderBottom: '2px solid #dac7c8',
+    borderBottom: '3px solid #ddb0dd',
     color: '#cc6699',
     fontSize: "20px",
+    borderBottomRightRadius: '100px',
+    borderBottomLeftRadius: '100px',
+
   }
   const navButtons = {
-  marginLeft: "10px",
-  marginRight: "20px",
-  border: "3px solid #ffccff",
+  display: 'flex',
+  justifyContent: 'center',
+}
+const logoStyles = {
+display: 'flex',
+justifyContent: 'center',
+marginTop: '20px'
+}
+const buttonColors = {
+  marginLeft: '10px',
+  border: "3px solid #fff285",
   color: "white",
-  backgroundColor: "#cc0099",
-  padding: "5px;",
-  textDecoration: 'none'
+  backgroundColor: "#c06cc6",
+  padding: "10px",
+  textDecoration: 'none',
+  fontSize: '20px',
+  borderRadius: '20px'
 }
   return (
+    <div>
     <div style={headerStyle}>
-    <h1>Thera Star</h1>
-    <p> Don't give up, Help is within reach </p>
-    <table className="nav-links">
-      <Link to="/"><Button style={navButtons}>Home</Button></Link>
-      <Link to="/articlelist"><Button style={navButtons}>Resources</Button></Link>
-      <Link to="/articleadd"><Button style={navButtons}>Add article</Button></Link>
-      <Link to="/reviewlist"><Button style={navButtons}>Reviews</Button></Link>
-      <Link to="/reviewadd"><Button style={navButtons}>Feedback</Button></Link>
+    <table style={navButtons} className="nav-links">
+      <Link to="/"><Button style={buttonColors}>Home</Button></Link>
+      <Link to="/articlelist"><Button style={buttonColors}>Resources</Button></Link>
+      <Link to="/articleadd"><Button style={buttonColors}>Add article</Button></Link>
+      <Link to="/reviewlist"><Button style={buttonColors}>Reviews</Button></Link>
+      <Link to="/reviewadd"><Button style={buttonColors}>Feedback</Button></Link>
     </table>
+    </div>
+    <div style={logoStyles}>
+    <img src={logo} alt="Logo" />
+    </div>
     </div>
   );
 }

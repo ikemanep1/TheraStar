@@ -2,7 +2,7 @@ import React from "react";
 
 function Footer(){
   const footerStyle = {
-    backgroundColor: "#fef0ef",
+    backgroundColor: "#ffccff",
     padding: "5px",
     textDecoration: 'none',
     textAlign: 'center',
@@ -13,7 +13,9 @@ function Footer(){
     marginTop: '100%',
     marginBottom: '0%',
     height: '20%',
-    position: 'relative'
+    position: 'relative',
+    borderTopRightRadius: '100px',
+    borderTopLeftRadius: '100px'
   }
   return (
     <div style={footerStyle}>
