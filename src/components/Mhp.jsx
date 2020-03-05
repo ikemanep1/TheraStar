@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 function Mhp(props){
-  const articleSingular = {
+  const mhpSingular = {
     margin: '40px',
     textAlign: 'center',
     backgroundColor: '#7a387a',
@@ -13,7 +13,7 @@ function Mhp(props){
     color: '#fdfdff'
   }
   return (
-    <div style={articleSingular}>
+    <div style={mhpSingular}>
     <p>{props.name}</p>
     <ul>
       <p>Field: {props.occupation}</p>
