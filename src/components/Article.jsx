@@ -8,8 +8,8 @@ function Article(props){
     <div style={articleSingular}>
     <p>{props.name}</p>
     <ul>
-      <p>Price per unit: {props.link}</p>
-      <p>Alcohol content: {props.description}</p>
+      <p> {props.link}</p>
+      <p> {props.description}</p>
     </ul>
   </div>
    );

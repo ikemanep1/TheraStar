@@ -17,6 +17,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      masterArticleList: [
+        {
+        name: "Coping with stress",
+        link: "ike.com",
+        description: "This article helps people who are suffering from stress. It includes deep breathing techniques."
+      },
+      {
+        name: "Financial help",
+        link: "Leo.com",
+        description: "This article helps people who are struggling financially."
+      },
+      {
+        name: "How to be a good friend",
+        link: "Marvin.com",
+        description: "This article helps people who are looking to help friends and loved ones."
+      }
+    ]
     }
     this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
   };
