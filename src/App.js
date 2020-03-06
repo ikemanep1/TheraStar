@@ -23,6 +23,8 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      items: [],
+      isLoaded: false,
       masterMhpList: [{
         name: "Ike Esquivel-Pilloud, MD",
         occupation: "cheer-up artist",
@@ -88,11 +90,23 @@ class App extends React.Component {
           link: "Marvin.com",
           description: "This article helps people who are looking to help friends and loved ones."
         }
-      ]
+      ],
     }
     this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
     this.handleAddingNewReviewToList = this.handleAddingNewReviewToList.bind(this);
   };
+    componentDidMount() {
+      fetch('https://localhost:3000/mhps')
+        .then(res => res.json())
+        .then(json => {
+          this.setState({
+            isLoaded: true,
+            items: json,
+          })
+          console.log(json)
+        });
+        console.log(this.state.items)
+    }
 
   handleAddingNewArticleToList(newArticle) {
     let newMasterArticleList = this.state.masterArticleList.slice();
@@ -106,8 +120,21 @@ class App extends React.Component {
     this.setState({masterReviewList: newMasterReviewList});
   }
   render() {
+
+      const { isLoaded, items } = this.state;
+      if (!isLoaded) {
+        return <div>Loading</div>;
+      }
     return (
       <div className="App">
+        <h2>data has been Loaded</h2>
+        <ul>
+          {items.map(item => (
+            <li key={item.id}>
+              {item.name}
+            </li>
+          ))};
+        </ul>
       <div className="HomeStretch">
       <Header/>
       <header className="TheraStar">
