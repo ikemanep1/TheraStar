@@ -5,8 +5,8 @@ import Article from './components/Article';
 import ArticleAdd from './components/ArticleAdd';
 import ArticleList from './components/ArticleList';
 import Mhp from './components/Mhp';
-import MhpList from './components/MhpList';
 import Review from './components/Review';
+import MhpList from './components/MhpList';
 import ReviewAdd from './components/ReviewAdd';
 import ReviewList from './components/ReviewList';
 import NewArticleControl from './components/NewArticleControl';
@@ -95,18 +95,18 @@ class App extends React.Component {
     this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
     this.handleAddingNewReviewToList = this.handleAddingNewReviewToList.bind(this);
   };
-    componentDidMount() {
-      fetch('https://localhost:3000/mhps')
-        .then(res => res.json())
-        .then(json => {
-          this.setState({
-            isLoaded: true,
-            items: json,
-          })
-          console.log(json)
-        });
-        console.log(this.state.items)
-    }
+    // componentDidMount() {
+    //   fetch('https://localhost:3000/mhps')
+    //     .then(res => res.json())
+    //     .then(json => {
+    //       this.setState({
+    //         isLoaded: true,
+    //         items: json,
+    //       })
+    //       console.log(json)
+    //     });
+    //     console.log(this.state.items)
+    // }
 
   handleAddingNewArticleToList(newArticle) {
     let newMasterArticleList = this.state.masterArticleList.slice();
@@ -121,20 +121,13 @@ class App extends React.Component {
   }
   render() {
 
-      const { isLoaded, items } = this.state;
-      if (!isLoaded) {
-        return <div>Loading</div>;
-      }
+      // const { isLoaded, items } = this.state;
+      // if (!isLoaded) {
+      //   return <div>Loading</div>;
+      // }
     return (
       <div className="App">
-        <h2>data has been Loaded</h2>
-        <ul>
-          {items.map(item => (
-            <li key={item.id}>
-              {item.name}
-            </li>
-          ))};
-        </ul>
+    
       <div className="HomeStretch">
       <Header/>
       <header className="TheraStar">
