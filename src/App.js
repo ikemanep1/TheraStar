@@ -76,20 +76,35 @@ class App extends React.Component {
       ],
       masterArticleList: [
         {
-          name: "Coping with stress",
-          link: "ike.com",
-          description: "This article helps people who are suffering from stress. It includes deep breathing techniques."
+          name: "Stress management",
+          link: "https://www.helpguide.org/articles/stress/stress-management.htm",
+          description: "This article covers the importance of being able to manage stress, and provides tips on how to do it."
         },
         {
-          name: "Financial help",
-          link: "Leo.com",
-          description: "This article helps people who are struggling financially."
+          name: "How to handle stress at work",
+          link: "https://www.health.harvard.edu/blog/how-to-handle-stress-at-work-2019041716436",
+          description: "This article published by Harvard Medical School covers stress in the workplace, how it affects the body, and provides tips on how to take care of yourself."
         },
         {
-          name: "How to be a good friend",
-          link: "Marvin.com",
-          description: "This article helps people who are looking to help friends and loved ones."
-        }
+          name: "Finding a provider",
+          link: "https://www.healthcare.gov/blog/finding-a-provider/",
+          description: "This article provides tips on finding a mental health practitioner."
+        },
+        {
+          name: "Supporting someone with a mental health condition",
+          link: "https://www.beyondblue.org.au/the-facts/supporting-someone/supporting-someone-with-depression-or-anxiety",
+          description: "This article details the importance of being supportive of those who have mental health conditions."
+        },
+        {
+          name: "Six Ways to Stand Behind Your LGBT Students",
+          link: "https://www.tolerance.org/magazine/six-ways-to-stand-behind-your-lgbt-students",
+          description: "This article covers the importance of being inclusive and supportive of LGBT communities in the classroom."
+        },
+        {
+          name: "This Way Up",
+          link: "https://thiswayup.org.au/how-do-you-feel/worried/",
+          description: "This article talks about anxiety, and provides tips on how to cope with it."
+        },
       ],
     }
     this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
@@ -127,7 +142,7 @@ class App extends React.Component {
       // }
     return (
       <div className="App">
-    
+
       <div className="HomeStretch">
       <Header/>
       <header className="TheraStar">
