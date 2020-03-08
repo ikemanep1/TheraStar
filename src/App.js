@@ -26,15 +26,15 @@ class App extends React.Component {
       items: [],
       isLoaded: false,
       masterMhpList: [{
-        name: "Ike Esquivel-Pilloud, MD",
-        occupation: "cheer-up artist",
-        address: "'Clara', computer station 1B",
-        insurance: "accepts all forms",
+        name: "Valarie Tobin, CNS",
+        occupation: "CNS-Child & Adolescent Psychiatric & Mental Health ( Primary Specialty )",
+        address: "1700 W. Van Buren St. Suite 5827-B Chicago, IL 60612",
+        insurance: "Can be found on site",
         accepting: "Is currently accepting patients",
-        email: "ike.esquivelpilloud@gmail.com",
-        phone: "***-***-****",
-        bio: "Ike is well-versed in the practice of cheering people up, he's a real pro. Ike is even better at his trade if you provide licorice.",
-        link: "https://www.linkedin.com/in/isaac-esquivel-pilloud/"
+        email: "unavailable",
+        phone: "(312) 563-1579",
+        bio: "Valarie specializes in the mental health of children.",
+        link: "https://doctors.rush.edu/details/17816/valerie-tobin-cns-child__adolescent_psychiatric__mental_health-chicago"
       }],
       masterReviewList: [
         {
