@@ -1,8 +1,43 @@
-This is the user interface for my capstone.
+# _TheraStar_
 
+### _A place to find help._
 
-Friday 3/6/2020:
+### By _**Ike Esquivel-Pilloud**_
 
--I've spent pretty much the entire day working and studying API implementation into my project, and have come across bug after bug.
+# Description
 
--Continuing to research API implementation, overcome Heroku bugs, etc.
+_This is a REACT project that fetches data from a deployed API containing information for articles and mental health practitioners. It is for users who are looking to find mental health practitioners in the Portland area, as well as articles on coping with stress, anxiety, and more._
+
+### Setup/Installation Requirements
+
+* _1: Navigate to https://lit-sea-37901.herokuapp.com/#/_
+
+# specs
+
+_The logic incorporates state functionality, inverse data flow, and unidirectional data flow to dynamically update pages as the DOM is manipulated. Forms take input, buttons affect what is visible, and functions fire at specific intervals_
+
+_This visual shows all of the pages that involve state functionality. Class-based components are dark gray, while functional components are light gray. Pink links highlight connections between class-based components, while red links connect functional components._
+
+_Only the control components, and the app itself are class-based components. The forms, singular pages, and list pages are functional components. The program will navigate to a confirmation page if a new article or review is added, and will then navigate to a form page. Information submitted through these form pages will show up in the home page of the application._
+
+### Support and contact details
+
+_ike.esquivelpilloud@gmail.com_
+
+### Technologies Used
+
+_I used jquery, and javaScript, along with atom and github. I also used the following:
+
+-Babel
+-ESlint
+-Code Uglification
+-Jest
+-Webpack
+-Plugins
+-REACT
+
+# License
+
+_MIT licensing_
+
+Copyright (c) 2020 **_Ike Esquivel-Pilloud_** -->

@@ -110,18 +110,19 @@ class App extends React.Component {
     this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
     this.handleAddingNewReviewToList = this.handleAddingNewReviewToList.bind(this);
   };
-    // componentDidMount() {
-    //   fetch('https://localhost:3000/mhps')
-    //     .then(res => res.json())
-    //     .then(json => {
-    //       this.setState({
-    //         isLoaded: true,
-    //         items: json,
-    //       })
-    //       console.log(json)
-    //     });
-    //     console.log(this.state.items)
-    // }
+
+  componentDidMount() {
+  fetch('https://obscure-tor-14240.herokuapp.com/articles')
+    .then(res => res.json())
+    .then(json => {
+      this.setState({
+        isLoaded: true,
+        items: json,
+      })
+      console.log(json)
+    });
+    console.log(this.state.items)
+}
 
   handleAddingNewArticleToList(newArticle) {
     let newMasterArticleList = this.state.masterArticleList.slice();
@@ -136,10 +137,10 @@ class App extends React.Component {
   }
   render() {
 
-      // const { isLoaded, items } = this.state;
-      // if (!isLoaded) {
-      //   return <div>Loading</div>;
-      // }
+      const { isLoaded, items } = this.state;
+      if (!isLoaded) {
+        return <div>Loading</div>;
+      }
     return (
       <div className="App">
 
