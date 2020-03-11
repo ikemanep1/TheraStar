@@ -2,5 +2,6 @@ body {
   background-color: #ffdae4;
   background-image: url('./img/love.png');
   background-repeat: no-repeat;
-  background-size: 160%;
+  background-size: 120%;
+  background-attachment: fixed;
 }

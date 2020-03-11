@@ -67,29 +67,26 @@ class App extends React.Component {
       }
 
       else {
+        const mhpSingular = {
+          margin: '40px',
+          textAlign: 'center',
+          backgroundColor: '#7a387a',
+          padding: '20px',
+          borderRadius: '100px',
+          border: '3px solid #ddb0dd',
+          fontFamily: 'luminari, fantasy',
+          color: '#fdfdff'
+        }
+        const itemGrid = {
+          display: 'grid',
+          gridTemplateColumns: '1fr 1fr'
+        }
     return (
       <div className="App">
       <div className="HomeStretch">
       <Header/>
       <header className="TheraStar">
       </header>
-      <div>
-      {items.map(item =>
-        <div key={item.id}>
-        <h4> {item.name} </h4>
-        <ul>
-        <li> {item.occupation} </li>
-        <li> {item.address} </li>
-        <li> {item.insurance} </li>
-        <li> {item.accepting} </li>
-        <li> {item.email} </li>
-        <li> {item.phone} </li>
-        <li> {item.bio} </li>
-        <li> {item.link} </li>
-        </ul>
-        </div>
-      )}
-      </div>
       <div>
       <Switch>
       <Route exact path='/' render={() =>< MhpList mhpTotal = {this.state.masterMhpList} />}/>
@@ -99,6 +96,21 @@ class App extends React.Component {
       <Route exact path='/articlelist' render={() =>< ArticleList articleTotal = {this.state.masterArticleList} />}/>
       <Route component={Error404} />
       </Switch>
+      <div style={itemGrid}>
+      {items.map(item =>
+        <div style={mhpSingular} key={item.id}>
+        <h4> {item.name} </h4>
+        <p> {item.occupation} </p>
+        <p> {item.address} </p>
+        <p> {item.insurance} </p>
+        <p> {item.accepting} </p>
+        <p> {item.email} </p>
+        <p> {item.phone} </p>
+        <p> {item.bio} </p>
+        <p> {item.link} </p>
+        </div>
+      )}
+      </div>
       <Footer/>
       </div>
       </div>
