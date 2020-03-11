@@ -23,7 +23,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      items: [],
+      state1: [],
+      state2: [],
+      state3: [],
       isLoaded: false,
       masterMhpList: [],
       masterReviewList: [],
@@ -33,20 +35,31 @@ class App extends React.Component {
     this.handleAddingNewReviewToList = this.handleAddingNewReviewToList.bind(this);
   };
 
-  componentDidMount() {
-  // fetch('https://infinite-basin-93540.herokuapp.com/articles')
-  fetch('https://infinite-basin-93540.herokuapp.com/mhps')
-  // fetch('https://infinite-basin-93540.herokuapp.com/reviews')
-    .then(res => res.json())
-    .then(json => {
+    componentDidMount() {
+  Promise.all([
+    fetch('https://infinite-basin-93540.herokuapp.com/articles'),
+    fetch('https://infinite-basin-93540.herokuapp.com/mhps'),
+    fetch('https://infinite-basin-93540.herokuapp.com/reviews')
+  ])
+  .then(([res1, res2, res3]) => (
+    {
+      res1: res1.json(),
+      res2: res2.json(),
+      res3: res3.json()
+    }))
+    .then(({res1, res2, res3}) => {
       this.setState({
         isLoaded: true,
-        items: json,
-      })
-      console.log(json)
+        state1: res1,
+        state2: res2,
+        state3: res3
+      });
+    })
+    .catch((error) => {
+      console.log(error);
     });
-    console.log(this.state.items)
-}
+    }
+
 
   handleAddingNewArticleToList(newArticle) {
     let newMasterArticleList = this.state.masterArticleList.slice();
@@ -61,7 +74,7 @@ class App extends React.Component {
   }
   render() {
 
-      const { isLoaded, items } = this.state;
+      const { isLoaded, state2 } = this.state;
       if (!isLoaded) {
         return <div>Loading</div>;
       }
@@ -97,7 +110,7 @@ class App extends React.Component {
       <Route component={Error404} />
       </Switch>
       <div style={itemGrid}>
-      {items.map(item =>
+      {state2.map(item =>
         <div style={mhpSingular} key={item.id}>
         <h4> {item.name} </h4>
         <p> {item.occupation} </p>
