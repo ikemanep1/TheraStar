@@ -34,9 +34,9 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-  fetch('https://infinite-basin-93540.herokuapp.com/articles')
+  // fetch('https://infinite-basin-93540.herokuapp.com/articles')
   fetch('https://infinite-basin-93540.herokuapp.com/mhps')
-  fetch('https://infinite-basin-93540.herokuapp.com/reviews')
+  // fetch('https://infinite-basin-93540.herokuapp.com/reviews')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -76,16 +76,16 @@ class App extends React.Component {
       <div>
       {items.map(item =>
         <div key={item.id}>
-        <h4> {item.mhp.name} </h4>
+        <h4> {item.name} </h4>
         <ul>
-        <li> {item.mhp.occupation} </li>
-        <li> {item.mhp.address} </li>
-        <li> {item.mhp.insurance} </li>
-        <li> {item.mhp.accepting} </li>
-        <li> {item.mhp.email} </li>
-        <li> {item.mhp.phone} </li>
-        <li> {item.mhp.bio} </li>
-        <li> {item.mhp.link} </li>
+        <li> {item.occupation} </li>
+        <li> {item.address} </li>
+        <li> {item.insurance} </li>
+        <li> {item.accepting} </li>
+        <li> {item.email} </li>
+        <li> {item.phone} </li>
+        <li> {item.bio} </li>
+        <li> {item.link} </li>
         </ul>
         </div>
       )}
