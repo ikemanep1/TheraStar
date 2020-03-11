@@ -6,7 +6,6 @@ import logo from '../img/logo.png';
 function Header(){
   const headerStyle = {
     backgroundColor: "#ffccff",
-    color: "white",
     padding: "5px",
     textDecoration: 'none',
     textAlign: 'center',
@@ -40,13 +39,13 @@ const buttonColors = {
   return (
     <div>
     <div style={headerStyle}>
-    <table style={navButtons} className="nav-links">
+    <div style={navButtons} className="nav-links">
       <Link to="/"><Button style={buttonColors}>Home</Button></Link>
       <Link to="/articlelist"><Button style={buttonColors}>Resources</Button></Link>
       <Link to="/articleadd"><Button style={buttonColors}>Add article</Button></Link>
       <Link to="/reviewlist"><Button style={buttonColors}>Reviews</Button></Link>
       <Link to="/reviewadd"><Button style={buttonColors}>Provide Feedback</Button></Link>
-    </table>
+    </div>
     </div>
     <div style={logoStyles}>
     <img src={logo} alt="Logo" />

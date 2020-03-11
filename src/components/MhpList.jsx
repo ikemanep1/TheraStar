@@ -1,8 +1,6 @@
 import React from "react";
 import Mhp from "./Mhp";
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
-import {Button} from 'react-bootstrap';
 
 function MhpList(props){
   const mhpIntro = {

@@ -33,18 +33,20 @@ class App extends React.Component {
     this.handleAddingNewReviewToList = this.handleAddingNewReviewToList.bind(this);
   };
 
-//   componentDidMount() {
-//   fetch('https://obscure-tor-14240.herokuapp.com/articles')
-//     .then(res => res.json())
-//     .then(json => {
-//       this.setState({
-//         isLoaded: true,
-//         items: json,
-//       })
-//       console.log(json)
-//     });
-//     console.log(this.state.items)
-// }
+  componentDidMount() {
+  fetch('https://infinite-basin-93540.herokuapp.com/articles')
+  fetch('https://infinite-basin-93540.herokuapp.com/mhps')
+  fetch('https://infinite-basin-93540.herokuapp.com/reviews')
+    .then(res => res.json())
+    .then(json => {
+      this.setState({
+        isLoaded: true,
+        items: json,
+      })
+      console.log(json)
+    });
+    console.log(this.state.items)
+}
 
   handleAddingNewArticleToList(newArticle) {
     let newMasterArticleList = this.state.masterArticleList.slice();
@@ -59,17 +61,35 @@ class App extends React.Component {
   }
   render() {
 
-      // const { isLoaded, items } = this.state;
-      // if (!isLoaded) {
-      //   return <div>Loading</div>;
-      // }
+      const { isLoaded, items } = this.state;
+      if (!isLoaded) {
+        return <div>Loading</div>;
+      }
+
+      else {
     return (
       <div className="App">
-
       <div className="HomeStretch">
       <Header/>
       <header className="TheraStar">
       </header>
+      <div>
+      {items.map(item =>
+        <div key={item.id}>
+        <h4> {item.mhp.name} </h4>
+        <ul>
+        <li> {item.mhp.occupation} </li>
+        <li> {item.mhp.address} </li>
+        <li> {item.mhp.insurance} </li>
+        <li> {item.mhp.accepting} </li>
+        <li> {item.mhp.email} </li>
+        <li> {item.mhp.phone} </li>
+        <li> {item.mhp.bio} </li>
+        <li> {item.mhp.link} </li>
+        </ul>
+        </div>
+      )}
+      </div>
       <div>
       <Switch>
       <Route exact path='/' render={() =>< MhpList mhpTotal = {this.state.masterMhpList} />}/>
@@ -85,6 +105,7 @@ class App extends React.Component {
       </div>
     );
   }
+}
 }
 
 export default App;

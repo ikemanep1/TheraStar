@@ -7,7 +7,6 @@ function Footer(){
     textDecoration: 'none',
     textAlign: 'center',
     fontFamily: 'fantasy',
-    borderTop: '2px solid #dac7c8',
     color: '#cc6699',
     fontSize: "20px",
     marginTop: '100%',
