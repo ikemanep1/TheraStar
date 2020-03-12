@@ -64,7 +64,7 @@ function ReviewAdd(props) {
     placeholder='Review Content'
     ref={(input) => {_content = input;}}/>
     <Button style={buttonColors} type='submit'>Submit!</Button>
-      </form>
+    </form>
     </div>
   );
 }

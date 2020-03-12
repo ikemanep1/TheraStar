@@ -8,15 +8,16 @@ function ReviewList(props){
     gridTemplateColumns: '1fr 1fr'
   }
   return (
-       <div style={itemGrid}>
-         {props.reviewTotal.map((review) =>
-           <Review name={review.name}
-             subject={review.subject}
-             rating={review.rating}
-             content={review.content}/>
-         )}
-       </div>
-     );
+    <div style={itemGrid}>
+    {props.reviewTotal.map((review, index) =>
+      <Review name={review.name}
+      subject={review.subject}
+      rating={review.rating}
+      content={review.content}
+      key={index}/>
+    )}
+    </div>
+  );
 }
 
 ReviewList.propTypes = {

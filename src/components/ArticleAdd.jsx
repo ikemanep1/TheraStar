@@ -56,7 +56,7 @@ function ArticleAdd(props) {
     placeholder='Article Description'
     ref={(input) => {_description = input;}}/>
     <Button style={buttonColors} type='submit'>Submit!</Button>
-      </form>
+    </form>
     </div>
   );
 }

@@ -16,12 +16,12 @@ function Review(props){
     <div style={reviewSingular}>
     <p>{props.name} had this to say:</p>
     <ul>
-      <p>Article/Mhp: {props.subject}</p>
-      <p>rating: {props.rating} out of 5</p>
-      <p>"{props.content}"</p>
+    <p>Article/Mhp: {props.subject}</p>
+    <p>rating: {props.rating} out of 5</p>
+    <p>"{props.content}"</p>
     </ul>
-  </div>
-   );
+    </div>
+  );
 }
 
 Review.propTypes = {

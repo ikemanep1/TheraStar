@@ -28,11 +28,11 @@ function Article(props){
     <div style={articleSingular}>
     <p>Article: {props.name}</p>
     <ul>
-        <a href={props.link} ><Button style={buttonColors}>Read it here!</Button></a>
-      <p>About this article: {props.description}</p>
+    <a href={props.link} ><Button style={buttonColors}>Read it here!</Button></a>
+    <p>About this article: {props.description}</p>
     </ul>
-  </div>
-   );
+    </div>
+  );
 }
 
 Article.propTypes = {

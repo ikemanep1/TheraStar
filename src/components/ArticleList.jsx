@@ -9,16 +9,17 @@ function ArticleList(props){
     gridTemplateColumns: '1fr 1fr'
   }
   return (
-       <div>
-       <div className="intro" style={itemGrid}>
-         {props.articleTotal.map((article) =>
-           <Article name={article.name}
-             description={article.description}
-             link={article.link}/>
-         )}
-       </div>
-       </div>
-     );
+    <div>
+    <div className="intro" style={itemGrid}>
+    {props.articleTotal.map((article, index) =>
+      <Article name={article.name}
+      description={article.description}
+      link={article.link}
+      key={index}/>
+    )}
+    </div>
+    </div>
+  );
 }
 
 ArticleList.propTypes = {

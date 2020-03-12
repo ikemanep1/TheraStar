@@ -26,7 +26,7 @@ class NewReviewControl extends React.Component {
     }
     return (
       <div>
-        {currentlyVisibleContent}
+      {currentlyVisibleContent}
       </div>
     );
   }

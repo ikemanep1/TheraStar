@@ -26,7 +26,7 @@ class NewArticleControl extends React.Component {
     }
     return (
       <div>
-        {currentlyVisibleContent}
+      {currentlyVisibleContent}
       </div>
     );
   }
