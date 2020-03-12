@@ -25,7 +25,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch('https://gentle-retreat-12289.herokuapp.com/mhps')
+    fetch('https://infinite-basin-93540.herokuapp.com/mhps')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -33,7 +33,7 @@ class App extends React.Component {
         state1Items: json,
       })
     });
-    fetch('https://gentle-retreat-12289.herokuapp.com/articles')
+    fetch('https://infinite-basin-93540.herokuapp.com/articles')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -41,7 +41,7 @@ class App extends React.Component {
         state2Items: json,
       })
     });
-    fetch('https://gentle-retreat-12289.herokuapp.com/reviews')
+    fetch('https://infinite-basin-93540.herokuapp.com/reviews')
     .then(res => res.json())
     .then(json => {
       this.setState({
