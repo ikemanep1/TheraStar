@@ -27,37 +27,10 @@ class App extends React.Component {
       state2Items: [],
       state3Items: [],
       isLoaded: false,
-      masterMhpList: [],
-      masterReviewList: [],
-      masterArticleList: [],
     }
     this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
     this.handleAddingNewReviewToList = this.handleAddingNewReviewToList.bind(this);
   };
-
-  //   componentDidMount() {
-  // Promise.all([
-  //   fetch('https://infinite-basin-93540.herokuapp.com/mhps'),
-  //   fetch('https://infinite-basin-93540.herokuapp.com/reviews')
-  // ])
-  // .then(([res1, res2, res3]) => (
-  //   {
-  //     res1: res1.json(),
-  //     res2: res2.json(),
-  //     res3: res3.json()
-  //   }))
-  //   .then(({res1, res2, res3}) => {
-  //     this.setState({
-  //       isLoaded: true,
-  //       state1: res1,
-  //       state2: res2,
-  //       state3: res3
-  //     });
-  //   })
-  //   .catch((error) => {
-  //     console.log(error);
-  //   });
-  //   }
 
     componentDidMount() {
       fetch('https://infinite-basin-93540.herokuapp.com/mhps')
@@ -99,12 +72,6 @@ class App extends React.Component {
   }
   render() {
 
-      const { isLoaded, state1Items, state2Items, state3Items } = this.state;
-      if (!isLoaded) {
-        return <div>Loading</div>;
-      }
-
-      else {
         const mhpSingular = {
           margin: '40px',
           textAlign: 'center',
@@ -119,6 +86,12 @@ class App extends React.Component {
           display: 'grid',
           gridTemplateColumns: '1fr 1fr'
         }
+        const { isLoaded, state1Items, state2Items, state3Items } = this.state;
+        if (!isLoaded) {
+          return <div style={mhpSingular}>Loading</div>;
+        }
+
+        else {
     return (
       <div className="App">
       <div className="HomeStretch">
@@ -127,28 +100,13 @@ class App extends React.Component {
       </header>
       <div>
       <Switch>
-      <Route exact path='/' render={() =>< MhpList mhpTotal = {this.state.masterMhpList} />}/>
+      <Route exact path='/' render={() =>< MhpList mhpTotal = {this.state.state1Items} />}/>
       <Route path='/articleadd' render={()=><NewArticleControl onNewArticleCreation={this.handleAddingNewArticleToList} />} />
       <Route path='/reviewadd' render={()=><NewReviewControl onNewReviewCreation={this.handleAddingNewReviewToList} />} />
-      <Route exact path='/reviewlist' render={() =>< ReviewList reviewTotal = {this.state.masterReviewList} />}/>
+      <Route exact path='/reviewlist' render={() =>< ReviewList reviewTotal = {this.state.state3Items} />}/>
       <Route exact path='/articlelist' render={() =>< ArticleList articleTotal = {this.state.state2Items} />}/>
       <Route component={Error404} />
       </Switch>
-      <div style={itemGrid}>
-      {state1Items.map(state1Item =>
-        <div style={mhpSingular} key={state1Item.id}>
-        <h4> {state1Item.name} </h4>
-        <p> {state1Item.occupation} </p>
-        <p> {state1Item.address} </p>
-        <p> {state1Item.insurance} </p>
-        <p> {state1Item.accepting} </p>
-        <p> {state1Item.email} </p>
-        <p> {state1Item.phone} </p>
-        <p> {state1Item.bio} </p>
-        <p> {state1Item.link} </p>
-        </div>
-      )}
-      </div>
       <Footer/>
       </div>
       </div>
