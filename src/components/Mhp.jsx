@@ -1,5 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
+import { Link } from 'react-router-dom';
+import {Button} from 'react-bootstrap';
 
 function Mhp(props){
   const mhpSingular = {
@@ -9,8 +11,18 @@ function Mhp(props){
     padding: '20px',
     borderRadius: '100px',
     border: '3px solid #ddb0dd',
-    fontFamily: 'luminari, fantasy',
+    fontFamily: 'Comic Sans MS',
     color: '#fdfdff'
+  }
+  const buttonColors = {
+    marginLeft: '10px',
+    border: "3px solid #fff285",
+    color: "white",
+    backgroundColor: "#c06cc6",
+    padding: "10px",
+    textDecoration: 'none',
+    fontSize: '20px',
+    borderRadius: '20px'
   }
   return (
     <div style={mhpSingular}>
@@ -23,7 +35,7 @@ function Mhp(props){
       <p>Email Address: {props.email}</p>
       <p>Office Number: {props.phone}</p>
       <p>About: {props.bio}</p>
-      <p>Website: {props.link}</p>
+      <a href={props.link} ><Button style={buttonColors}>Website</Button></a>
     </ul>
   </div>
    );

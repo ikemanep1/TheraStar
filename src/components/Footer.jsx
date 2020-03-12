@@ -1,4 +1,5 @@
 import React from "react";
+import {Button} from 'react-bootstrap';
 
 function Footer(){
   const footerStyle = {
@@ -17,9 +18,21 @@ function Footer(){
     borderTopLeftRadius: '100px',
     borderTop: '3px solid #ddb0dd',
   }
+  const buttonColors = {
+    marginLeft: '10px',
+    border: "3px solid #fff285",
+    color: "white",
+    backgroundColor: "#c06cc6",
+    padding: "10px",
+    textDecoration: 'none',
+    fontSize: '20px',
+    borderRadius: '20px'
+  }
   return (
     <div style={footerStyle}>
-    <p>keep going</p>
+    <a href="facebook.com" ><Button style={buttonColors}>Facebook</Button></a>
+    <a href="twitter.com" ><Button style={buttonColors}>Twitter</Button></a>
+    <a href="instagram.com" ><Button style={buttonColors}>Instagram</Button></a>
     </div>
   );
 }
