@@ -1,31 +1,23 @@
 import React from 'react';
 import Header from './components/Header'
 import Footer from './components/Footer'
-import Article from './components/Article';
-import ArticleAdd from './components/ArticleAdd';
 import ArticleList from './components/ArticleList';
-import Mhp from './components/Mhp';
-import Review from './components/Review';
 import MhpList from './components/MhpList';
-import ReviewAdd from './components/ReviewAdd';
 import ReviewList from './components/ReviewList';
 import NewArticleControl from './components/NewArticleControl';
 import NewReviewControl from './components/NewReviewControl';
 import Error404 from './components/Error404';
 import {Switch, Route} from 'react-router-dom';
-import {Button} from 'react-bootstrap';
-import Moment from 'moment';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import {Link} from "react-router-dom";
 import './App.css';
 
 class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      state1Items: [],
-      state2Items: [],
-      state3Items: [],
+      // state1Items: [],
+      // state2Items: [],
+      // state3Items: [],
       isLoaded: false,
     }
     this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
@@ -86,7 +78,7 @@ class App extends React.Component {
       display: 'grid',
       gridTemplateColumns: '1fr 1fr'
     }
-    const { isLoaded, state1Items, state2Items, state3Items } = this.state;
+    const { isLoaded } = this.state;
     if (!isLoaded) {
       return <div style={mhpSingular}>Loading</div>;
     }
