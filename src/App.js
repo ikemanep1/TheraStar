@@ -23,9 +23,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      state1: [],
-      state2: [],
-      state3: [],
+      state1Items: [],
+      state2Items: [],
+      state3Items: [],
       isLoaded: false,
       masterMhpList: [],
       masterReviewList: [],
@@ -35,31 +35,56 @@ class App extends React.Component {
     this.handleAddingNewReviewToList = this.handleAddingNewReviewToList.bind(this);
   };
 
-    componentDidMount() {
-  Promise.all([
-    fetch('https://infinite-basin-93540.herokuapp.com/articles'),
-    fetch('https://infinite-basin-93540.herokuapp.com/mhps'),
-    fetch('https://infinite-basin-93540.herokuapp.com/reviews')
-  ])
-  .then(([res1, res2, res3]) => (
-    {
-      res1: res1.json(),
-      res2: res2.json(),
-      res3: res3.json()
-    }))
-    .then(({res1, res2, res3}) => {
-      this.setState({
-        isLoaded: true,
-        state1: res1,
-        state2: res2,
-        state3: res3
-      });
-    })
-    .catch((error) => {
-      console.log(error);
-    });
-    }
+  //   componentDidMount() {
+  // Promise.all([
+  //   fetch('https://infinite-basin-93540.herokuapp.com/mhps'),
+  //   fetch('https://infinite-basin-93540.herokuapp.com/reviews')
+  // ])
+  // .then(([res1, res2, res3]) => (
+  //   {
+  //     res1: res1.json(),
+  //     res2: res2.json(),
+  //     res3: res3.json()
+  //   }))
+  //   .then(({res1, res2, res3}) => {
+  //     this.setState({
+  //       isLoaded: true,
+  //       state1: res1,
+  //       state2: res2,
+  //       state3: res3
+  //     });
+  //   })
+  //   .catch((error) => {
+  //     console.log(error);
+  //   });
+  //   }
 
+    componentDidMount() {
+      fetch('https://infinite-basin-93540.herokuapp.com/mhps')
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+        isLoaded: true,
+        state1Items: json,
+      })
+    });
+      fetch('https://infinite-basin-93540.herokuapp.com/articles')
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+        isLoaded: true,
+        state2Items: json,
+      })
+    });
+      fetch('https://infinite-basin-93540.herokuapp.com/reviews')
+      .then(res => res.json())
+      .then(json => {
+        this.setState({
+        isLoaded: true,
+        state3Items: json,
+      })
+    });
+}
 
   handleAddingNewArticleToList(newArticle) {
     let newMasterArticleList = this.state.masterArticleList.slice();
@@ -74,7 +99,7 @@ class App extends React.Component {
   }
   render() {
 
-      const { isLoaded, state2 } = this.state;
+      const { isLoaded, state1Items, state2Items, state3Items } = this.state;
       if (!isLoaded) {
         return <div>Loading</div>;
       }
@@ -110,17 +135,17 @@ class App extends React.Component {
       <Route component={Error404} />
       </Switch>
       <div style={itemGrid}>
-      {state2.map(item =>
-        <div style={mhpSingular} key={item.id}>
-        <h4> {item.name} </h4>
-        <p> {item.occupation} </p>
-        <p> {item.address} </p>
-        <p> {item.insurance} </p>
-        <p> {item.accepting} </p>
-        <p> {item.email} </p>
-        <p> {item.phone} </p>
-        <p> {item.bio} </p>
-        <p> {item.link} </p>
+      {state1Items.map(state1Item =>
+        <div style={mhpSingular} key={state1Item.id}>
+        <h4> {state1Item.name} </h4>
+        <p> {state1Item.occupation} </p>
+        <p> {state1Item.address} </p>
+        <p> {state1Item.insurance} </p>
+        <p> {state1Item.accepting} </p>
+        <p> {state1Item.email} </p>
+        <p> {state1Item.phone} </p>
+        <p> {state1Item.bio} </p>
+        <p> {state1Item.link} </p>
         </div>
       )}
       </div>
