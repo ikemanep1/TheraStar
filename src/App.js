@@ -15,9 +15,12 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      // state1Items: [],
-      // state2Items: [],
-      // state3Items: [],
+      state1Items: [],
+      state2Items: [],
+      state3Items: [],
+      masterMhpList: [],
+      masterArticleList: [],
+      masterReviewList: [],
       isLoaded: false,
     }
     this.handleAddingNewArticleToList = this.handleAddingNewArticleToList.bind(this);
