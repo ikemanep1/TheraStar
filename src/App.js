@@ -1,6 +1,7 @@
 import React from 'react';
-import Header from './components/Header'
-import Footer from './components/Footer'
+import Home from './components/Home';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import ArticleList from './components/ArticleList';
 import MhpList from './components/MhpList';
 import ReviewList from './components/ReviewList';
@@ -95,7 +96,8 @@ class App extends React.Component {
         </header>
         <div>
         <Switch>
-        <Route exact path='/' render={() =>< MhpList mhpTotal = {this.state.state1Items} />}/>
+        <Route exact path='/' render={() =>< Home />}/>
+        <Route exact path='/mhplist' render={() =>< MhpList mhpTotal = {this.state.state1Items} />}/>
         <Route path='/articleadd' render={()=><NewArticleControl onNewArticleCreation={this.handleAddingNewArticleToList} />} />
         <Route path='/reviewadd' render={()=><NewReviewControl onNewReviewCreation={this.handleAddingNewReviewToList} />} />
         <Route exact path='/reviewlist' render={() =>< ReviewList reviewTotal = {this.state.state3Items} />}/>

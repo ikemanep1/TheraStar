@@ -40,6 +40,7 @@ function Header(){
     <div style={headerStyle}>
     <div style={navButtons} className="nav-links">
     <Link to="/"><Button style={buttonColors}>Home</Button></Link>
+    <Link to="/mhplist"><Button style={buttonColors}>Therapists</Button></Link>
     <Link to="/articlelist"><Button style={buttonColors}>Resources</Button></Link>
     <Link to="/articleadd"><Button style={buttonColors}>Add article</Button></Link>
     <Link to="/reviewlist"><Button style={buttonColors}>Reviews</Button></Link>
