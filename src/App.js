@@ -1,5 +1,5 @@
 import React from 'react';
-import Home from './components/Home';
+import Map from './components/Map';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ArticleList from './components/ArticleList';
@@ -11,6 +11,9 @@ import Error404 from './components/Error404';
 import {Switch, Route} from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
+
+
+
 
 class App extends React.Component {
   constructor(props) {
@@ -29,7 +32,7 @@ class App extends React.Component {
   };
 
   componentDidMount() {
-    fetch('https://shrouded-stream-63622.herokuapp.com/mhps')
+    fetch('http://localhost:3000/mhps')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -37,7 +40,7 @@ class App extends React.Component {
         state1Items: json,
       })
     });
-    fetch('https://shrouded-stream-63622.herokuapp.com/articles')
+    fetch('http://localhost:3000/articles')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -45,7 +48,7 @@ class App extends React.Component {
         state2Items: json,
       })
     });
-    fetch('https://shrouded-stream-63622.herokuapp.com/reviews')
+    fetch('http://localhost:3000/reviews')
     .then(res => res.json())
     .then(json => {
       this.setState({
@@ -91,20 +94,20 @@ class App extends React.Component {
       return (
         <div className="App">
         <div className="HomeStretch">
-        <Header/>
+        <Header />
         <header className="TheraStar">
         </header>
         <div>
         <Switch>
-        <Route exact path='/' render={() =>< Home />}/>
-        <Route exact path='/mhplist' render={() =>< MhpList mhpTotal = {this.state.state1Items} />}/>
-        <Route path='/articleadd' render={()=><NewArticleControl onNewArticleCreation={this.handleAddingNewArticleToList} />} />
-        <Route path='/reviewadd' render={()=><NewReviewControl onNewReviewCreation={this.handleAddingNewReviewToList} />} />
+        <Route exact path='/' render={() =>< Map mhpTotal= {this.state.state1Items} />}/>
+        <Route path='/mhplist' render={() =>< MhpList mhpTotal = {this.state.state1Items} />}/>
+        <Route path='/articleadd' render={()=>< NewArticleControl onNewArticleCreation={this.handleAddingNewArticleToList} />} />
+        <Route path='/reviewadd' render={()=>< NewReviewControl onNewReviewCreation={this.handleAddingNewReviewToList} />} />
         <Route exact path='/reviewlist' render={() =>< ReviewList reviewTotal = {this.state.state3Items} />}/>
         <Route exact path='/articlelist' render={() =>< ArticleList articleTotal = {this.state.state2Items} />}/>
         <Route component={Error404} />
         </Switch>
-        <Footer/>
+        <Footer />
         </div>
         </div>
         </div>

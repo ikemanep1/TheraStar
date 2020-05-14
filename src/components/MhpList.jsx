@@ -23,6 +23,7 @@ function MhpList(props){
     <div style={itemGrid}>
     {props.mhpTotal.map((mhp, index) =>
       <Mhp name={mhp.name}
+      imgref={mhp.imgref}
       occupation={mhp.occupation}
       address={mhp.address}
       insurance={mhp.insurance}

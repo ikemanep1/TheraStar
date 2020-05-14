@@ -23,7 +23,7 @@ function Header(){
   const logoStyles = {
     display: 'flex',
     justifyContent: 'center',
-    marginTop: '20px'
+    marginTop: '20px',
   }
   const buttonColors = {
     marginLeft: '10px',
@@ -48,7 +48,7 @@ function Header(){
     </div>
     </div>
     <div style={logoStyles}>
-    <img src={logo} alt="Logo" />
+    <img src={logo} alt="Logo" style={{marginBottom: '40px'}}/>
     </div>
     </div>
   );

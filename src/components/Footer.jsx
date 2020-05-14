@@ -10,7 +10,7 @@ function Footer(){
     fontFamily: 'fantasy',
     color: '#cc6699',
     fontSize: "20px",
-    marginTop: '100%',
+    marginTop: '20%',
     marginBottom: '0%',
     height: '20%',
     position: 'relative',

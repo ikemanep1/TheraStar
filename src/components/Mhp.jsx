@@ -27,6 +27,7 @@ function Mhp(props){
     <div style={mhpSingular}>
     <p>{props.name}</p>
     <ul>
+    <img src={props.imgref} alt="Logo" />
       <p>Field: {props.occupation}</p>
       <p>Office address: {props.address}</p>
       <p>Accepted forms of insurance: {props.insurance}</p>
@@ -50,6 +51,9 @@ Mhp.propTypes = {
   phone: PropTypes.string.isRequired,
   bio: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
+  imgref: PropTypes.string.isRequired,
+  latitude: PropTypes.string.isRequired,
+  longitude: PropTypes.string.isRequired,
 };
 
 
